@@ -5,6 +5,7 @@ metadata:
   namespace: kubevm-lab-hth89
   labels:
     expires-on: "2026-11-30"
+    app: web01
 spec:
   className: best-effort-small
   imageName: vmi-f129433223c4e34e9
