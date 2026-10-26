@@ -7,7 +7,7 @@ metadata:
     expires-on: "2026-11-30"
     app: web01
 spec:
-  className: best-effort-small
+  className: best-effort-medium
   imageName: vmi-f129433223c4e34e9
   storageClass: vsan-esa-auto-raid-policy
   powerState: PoweredOn
