@@ -1,0 +1,19 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-vm-expiry
+spec:
+  validationFailureAction: Enforce
+  rules:
+    - name: require-expires-on
+      match:
+        any:
+          - resources:
+              kinds:
+                - VirtualMachine
+      validate:
+        message: "Every VM needs an expires-on label (YYYY-MM-DD)."
+        pattern:
+          metadata:
+            labels:
+              expires-on: "?*"
