@@ -12,6 +12,6 @@ stringData:
         sudo: ALL=(ALL) NOPASSWD:ALL
         shell: /bin/bash
         ssh_authorized_keys:
-          - ssh-ed25519 AAAA_REPLACE_WITH_YOUR_PUBLIC_KEY
+          - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN75aO5bEyPzMPxEQbhMECd6daX1ss1r6f40N0CPID6V kubevm-lab
     packages:
       - nginx
