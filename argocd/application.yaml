@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/REPLACE_WITH_YOUR_GITHUB_USER/vcf9-vm-gitops-lab.git
+    repoURL: https://github.com/rutgerblom/vcf9-vm-gitops-lab.git
     targetRevision: main
     path: vms
   destination:
