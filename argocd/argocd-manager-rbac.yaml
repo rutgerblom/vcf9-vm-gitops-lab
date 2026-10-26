@@ -1,0 +1,35 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: argocd-manager-role
+  namespace: kubevm-lab-hth89
+rules:
+  - apiGroups: ["vmoperator.vmware.com"]
+    resources: ["virtualmachines", "virtualmachineservices"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: [""]
+    resources: ["secrets", "configmaps"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argocd-manager-rolebinding
+  namespace: kubevm-lab-hth89
+subjects:
+  - kind: ServiceAccount
+    name: argocd-manager
+    namespace: kubevm-lab-hth89
+roleRef:
+  kind: Role
+  name: argocd-manager-role
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: argocd-manager-token
+  namespace: kubevm-lab-hth89
+  annotations:
+    kubernetes.io/service-account.name: argocd-manager
+type: kubernetes.io/service-account-token

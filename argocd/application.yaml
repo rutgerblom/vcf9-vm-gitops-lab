@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kubevm-lab
-  namespace: argocd
+  namespace: kubevm-lab-hth89
 spec:
   project: default
   source:
@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: vms
   destination:
-    server: REPLACE_WITH_NAMESPACE_API_ENDPOINT
+    server: https://kubernetes.default.svc/?context=kubevm-lab-hth89
     namespace: kubevm-lab-hth89
   syncPolicy:
     automated:

@@ -1,0 +1,7 @@
+apiVersion: argocd-service.vsphere.vmware.com/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argocd
+  namespace: kubevm-lab-hth89
+spec:
+  version: 3.4.4+vmware.1-vks.1

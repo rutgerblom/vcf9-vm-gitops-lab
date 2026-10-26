@@ -1,0 +1,11 @@
+apiVersion: argocd-service.vsphere.vmware.com/v1alpha1
+kind: ManagedEntity
+metadata:
+  name: kubevm-lab
+  namespace: kubevm-lab-hth89
+spec:
+  clusterName: kubevm-lab
+  targetRef:
+    apiGroup: ""
+    kind: Namespace
+    name: kubevm-lab-hth89
